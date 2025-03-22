@@ -17,4 +17,5 @@ def images():
     return render_template('index.html')
 
 if __name__=="__main__":
-    application.run(debug=True)
+    port = int(os.environ.get("FLASK_RUN_PORT", 8000))
+    application.run(host='0.0.0.0',port=port)
